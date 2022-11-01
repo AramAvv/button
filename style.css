@@ -6,6 +6,7 @@ body {
     transition: .6s ease-out;
     background: linear-gradient(to left, white 50%, black 50%) right;
     background-size: 200%;
+
 }
 .switch {
     position: relative;
@@ -26,7 +27,6 @@ body {
     right: 0;
     bottom: 0;
     background-color: black;
-    -webkit-transition: .6s;
     transition: .6s;
     overflow: hidden;
 }
@@ -38,7 +38,6 @@ body {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .6s;
     transition: .6s;
 }
 .slider:after {
@@ -48,23 +47,60 @@ body {
     width: 26px;
     left: -30px;
     bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    background-color: black;
+    transition: .6s;
 }
 input:checked + .slider {
     background-color: white;
 }
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
 input:checked + .slider:before {
-    transform: translateX(80px);
-    background-color: black;
+    transform: translateX(90px);
+    background-color: white;
+}
+input:not(:checked) + .slider:before {
+    animation: bounce1 1s ease-in;
+}
+@keyframes bounce1 {
+    40% {
+        left: -5px;
+    }
+    60% {
+        left: 9px;
+    }
+    70% {
+        left: -1px;
+    }
+    80% {
+        left: 6px;
+    }
+    90% {
+        left: 3px;
+    }
+    100% {
+        left: 0;
+    }
 }
 input:checked + .slider:after {
     transform: translateX(60px);
     background-color: black;
+    animation: bounce 1s linear;
+}
+@keyframes bounce {
+    40% {
+        left: -20px;
+    }
+    60% {
+        left: -35px;
+    }
+    80% {
+        left: -26px;
+    }
+    90% {
+        left: -30px;
+    }
+    100% {
+        left: -26px;
+    }
 }
 .slider.round {
     border-radius: 34px;
@@ -79,6 +115,7 @@ input:checked + .slider:after {
     background-color: black;
     background-position: left;
 }
+
 
 
 
