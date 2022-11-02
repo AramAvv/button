@@ -57,7 +57,7 @@ input:checked + .slider:before {
     transform: translateX(90px);
     background-color: white;
 }
-input:not(:checked) + .slider:before {
+input:not(:checked) + .bounceRight:before {
     animation: bounce1 1s ease-in;
 }
 @keyframes bounce1 {

@@ -13,6 +13,7 @@ input.type = 'checkbox'
 slider.classList.add('slider','round')
 input.addEventListener("change", () => {
 body.classList.toggle('darktheme')
+slider.classList.add('bounceRight');
 });
 
 
